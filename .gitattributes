@@ -1,0 +1,3 @@
+/third_party/** -whitespace linguist-vendored
+/third_party/mongo-c-driver/docs/dev/deps.rst -diff
+/third_party/mongo-c-driver/src/libmongoc/doc/logging.rst -diff

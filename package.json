@@ -1,0 +1,31 @@
+{
+  "name": "@inox-cc/mongodb",
+  "version": "0.0.1",
+  "description": "MongoDB driver for the Inox programming language",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier . --write",
+    "lint": "prettier . --check",
+    "typecheck": "tsc --noEmit",
+    "test": "pnpm run test:architecture",
+    "test:architecture": "node --test tests/architecture/*.test.ts",
+    "check": "pnpm run lint && pnpm run typecheck && pnpm run test"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.21.0",
+      "onFail": "error"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "prettier": "3.9.5",
+    "typescript": "6.0.3"
+  }
+}

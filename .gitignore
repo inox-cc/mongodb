@@ -1,0 +1,10 @@
+/node_modules/
+/.pnpm-store/
+/coverage/
+/dist/
+/build/
+/tmp/
+/.idea/
+.DS_Store
+*.log
+*.tmp

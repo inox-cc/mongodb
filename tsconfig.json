@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "lib": ["ES2024"],
+    "module": "NodeNext",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2024",
+    "types": ["node"],
+    "useUnknownInCatchVariables": false
+  },
+  "include": ["compiler/**/*.ts", "index.d.ts", "tests/**/*.ts"],
+  "exclude": ["build/**", "coverage/**", "dist/**", "node_modules/**", "third_party/**", "tmp/**"]
+}
