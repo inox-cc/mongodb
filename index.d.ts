@@ -182,6 +182,7 @@ export class ObjectId {
   static isValid(input: string | ObjectId): boolean
 
   equals(otherId: string | ObjectId): boolean
+  toJSON(): string
   toString(): string
 }
 

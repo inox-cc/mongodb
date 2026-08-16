@@ -5,6 +5,7 @@ import { test } from 'node:test'
 import { fileURLToPath } from 'node:url'
 
 import { compilerLibraryNativeBuild, compilerLibraryPackage } from '../../compiler/index.ts'
+import { renderCompilerLibraryManifest } from '../../scripts/generate-compiler-library-manifest.ts'
 
 const packageRoot = fileURLToPath(new URL('../..', import.meta.url))
 const inoxRoot = resolve(packageRoot, '../inox')
@@ -31,9 +32,40 @@ test('mongodb package describes its compiler and native integration', () => {
   )
   assert.ok(compilerLibraryPackage.operations?.some((item) => item.bindingId === 'mongodb#Collection.find'))
   assert.ok(compilerLibraryPackage.operations?.some((item) => item.bindingId === 'mongodb#Cursor.toArray'))
+  assert.ok(compilerLibraryPackage.operations?.some((item) => item.bindingId === 'mongodb#ObjectId.toJSON'))
   assert.ok(compilerLibraryPackage.operations?.some((item) => item.bindingId === 'mongodb#Collection.createIndexes'))
   assert.ok(compilerLibraryPackage.operations?.some((item) => item.bindingId === 'mongodb#Collection.bulkWrite'))
   assert.ok(compilerLibraryPackage.operations?.some((item) => item.bindingId === 'mongodb#MongoClient.bulkWrite'))
+})
+
+test('npm package exposes a data-only Inox compiler contract', async () => {
+  const packageJson = JSON.parse(await readFile(join(packageRoot, 'package.json'), 'utf8')) as {
+    exports: { '.': { types: string }; './package.json': string }
+    files: string[]
+    inox: unknown
+    peerDependencies: Record<string, string>
+    types: string
+  }
+  const expectedInoxManifest = {
+    manifestVersion: 1,
+    libraryId: 'mongodb',
+    importSource: 'mongodb',
+    compilerLibrary: './compiler/library.json',
+    declarations: './index.d.ts',
+    native: {
+      sources: ['./src/mongodb.cc'],
+      includeDirs: ['./include']
+    }
+  }
+
+  assert.deepEqual(packageJson.inox, expectedInoxManifest)
+  assert.equal(packageJson.types, './index.d.ts')
+  assert.equal(packageJson.exports['.'].types, './index.d.ts')
+  assert.equal(packageJson.exports['./package.json'], './package.json')
+  assert.equal(packageJson.peerDependencies['@inox-cc/inox'], '0.0.1')
+  assert.ok(packageJson.files.includes('compiler/library.json'))
+  assert.ok(packageJson.files.includes('third_party/mongo-c-driver'))
+  assert.equal(await readFile(join(packageRoot, 'compiler/library.json'), 'utf8'), renderCompilerLibraryManifest())
 })
 
 test('mongodb facade does not expose C Driver headers', async () => {

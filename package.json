@@ -1,17 +1,47 @@
 {
   "name": "@inox-cc/mongodb",
   "version": "0.0.1",
-  "description": "MongoDB driver for the Inox programming language",
-  "private": true,
+  "description": "MongoDB driver for TypeScript programs compiled to C++ with Inox",
   "type": "module",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "compiler/library.json",
+    "include",
+    "index.d.ts",
+    "src",
+    "third_party/mongo-c-driver"
+  ],
+  "inox": {
+    "manifestVersion": 1,
+    "libraryId": "mongodb",
+    "importSource": "mongodb",
+    "compilerLibrary": "./compiler/library.json",
+    "declarations": "./index.d.ts",
+    "native": {
+      "sources": [
+        "./src/mongodb.cc"
+      ],
+      "includeDirs": [
+        "./include"
+      ]
+    }
+  },
   "license": "MIT",
   "scripts": {
+    "compiler:manifest": "node scripts/generate-compiler-library-manifest.ts",
+    "compiler:manifest:check": "node scripts/generate-compiler-library-manifest.ts --check",
     "format": "prettier . --write",
     "lint": "prettier . --check",
     "typecheck": "tsc --noEmit",
     "test": "pnpm run test:architecture",
     "test:architecture": "node --test tests/architecture/*.test.ts",
-    "check": "pnpm run lint && pnpm run typecheck && pnpm run test"
+    "check": "pnpm run lint && pnpm run typecheck && pnpm run compiler:manifest:check && pnpm run test"
   },
   "engines": {
     "node": ">=24"
@@ -27,5 +57,8 @@
     "@types/node": "26.1.1",
     "prettier": "3.9.5",
     "typescript": "6.0.3"
+  },
+  "peerDependencies": {
+    "@inox-cc/inox": "0.0.1"
   }
 }

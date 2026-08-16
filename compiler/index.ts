@@ -74,6 +74,7 @@ const operations: LibraryOperationDescriptor[] = [
   ),
   objectIdReceiverCall('equals', ['receiver', 'string-view-or-value'], booleanTypeRef, [stringOrObjectIdArgument()]),
   objectIdReceiverCall('toString', ['receiver'], stringTypeRef, [], stringResultMapping),
+  objectIdReceiverCall('toJSON', ['receiver'], stringTypeRef, [], stringResultMapping),
   bsonCall('serialize', ['runtime-value'], uint8ArrayTypeRef, undefined, [documentArgument()]),
   bsonCall('deserialize', ['value'], documentTypeRef, valueResultMapping, [uint8ArrayArgument()]),
   mongoClientConstructor(),
@@ -265,6 +266,8 @@ function objectIdReceiverCall(
   argumentChecks: LibraryArgumentCheckDescriptor[],
   cResultMapping?: LibraryCResultMappingDescriptor
 ): LibraryOperationDescriptor {
+  const convertsToString = name === 'toString' || name === 'toJSON'
+
   return {
     libraryId,
     bindingId: `${objectIdTypeId}.${name}`,
@@ -275,8 +278,8 @@ function objectIdReceiverCall(
     cExpression: name,
     cArgumentKinds,
     cCallStyle: 'member',
-    cFailureMode: name === 'toString' ? 'thrown' : null,
-    cPreservesPendingException: name !== 'toString',
+    cFailureMode: convertsToString ? 'thrown' : null,
+    cPreservesPendingException: !convertsToString,
     minArgs: argumentChecks.length,
     maxArgs: argumentChecks.length,
     argumentChecks,

@@ -53,6 +53,8 @@ for (let index = 0; index < encoded.length; index = index + 1) {
 }
 
 console.log('${resultPrefix}object-id', id.toString(), id.equals('507f1f77bcf86cd799439011'), ObjectId.isValid(id), ObjectId.isValid('bad'))
+console.log('${resultPrefix}object-id-console', { id })
+console.log('${resultPrefix}object-id-json', JSON.stringify({ id }))
 console.log('${resultPrefix}time', derived.toString())
 console.log('${resultPrefix}round-trip', equal, decoded.name, decoded.count)
 `
@@ -88,6 +90,8 @@ export async function assertMongoBsonRuntime(compiler: MongoBsonRuntimeCompiler)
 
     assert.deepEqual(lines, [
       `${resultPrefix}object-id 507f1f77bcf86cd799439011 1 1 0`,
+      `${resultPrefix}object-id-console { id: 507f1f77bcf86cd799439011 }`,
+      `${resultPrefix}object-id-json {"id":"507f1f77bcf86cd799439011"}`,
       `${resultPrefix}time 000000010000000000000000`,
       `${resultPrefix}round-trip 1 inox 3`
     ])

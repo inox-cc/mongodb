@@ -30,6 +30,7 @@ public:
 
   bool equals(inox::StringView otherId) const;
   bool equals(const MongoObjectId& otherId) const;
+  inox::String toJSON() const;
   inox::String toString() const;
   inox::Value runtimeValue() const;
 

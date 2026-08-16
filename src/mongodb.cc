@@ -2,6 +2,7 @@
 
 #include "inox/array.h"
 #include "inox/class_descriptor.h"
+#include "inox/class_runtime.h"
 #include "inox/error.h"
 #include "inox/loop.h"
 #include "inox/object.h"
@@ -63,7 +64,9 @@ static const inox_class_descriptor* inox_mongodb_object_id_descriptor() {
     nullptr,
     inox_mongodb_object_id_copy,
     inox_mongodb_object_id_destroy,
-    nullptr
+    nullptr,
+    inox::class_to_string<MongoObjectId>,
+    inox::class_to_json<MongoObjectId>
   };
 
   return &descriptor;
@@ -170,6 +173,10 @@ bool MongoObjectId::equals(inox::StringView otherId) const {
 
 bool MongoObjectId::equals(const MongoObjectId& otherId) const {
   return bytes_ == otherId.bytes_;
+}
+
+inox::String MongoObjectId::toJSON() const {
+  return toString();
 }
 
 inox::String MongoObjectId::toString() const {

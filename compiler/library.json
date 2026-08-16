@@ -1,0 +1,4130 @@
+{
+  "version": 1,
+  "descriptor": {
+    "id": "mongodb",
+    "dependencies": [
+      "global:binary",
+      "global:collections",
+      "global:error",
+      "global:promise",
+      "global:time"
+    ],
+    "nativeTypes": [
+      {
+        "libraryId": "mongodb",
+        "typeId": "mongodb#ObjectId",
+        "declarationNames": [
+          "ObjectId"
+        ],
+        "valueType": "object",
+        "cppType": "MongoObjectId",
+        "baseTypeIds": [],
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "cValueAdapter": "MongoObjectId(inox::Value($value))",
+        "cValueAdapterFailureMode": "thrown",
+        "cValueAdapterPreservesPendingException": true,
+        "cRuntimeValueExpression": "$value.runtimeValue().release()",
+        "cRuntimeValueOwnership": "owned",
+        "cRuntimeValueValidExpression": "MongoObjectId::isObjectId(inox::Value($value))"
+      },
+      {
+        "libraryId": "mongodb",
+        "typeId": "mongodb#MongoClient",
+        "declarationNames": [
+          "MongoClient"
+        ],
+        "valueType": "object",
+        "cppType": "MongoClient",
+        "baseTypeIds": [],
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "cValueAdapter": "MongoClient(inox::Value($value))",
+        "cValueAdapterFailureMode": "thrown",
+        "cValueAdapterPreservesPendingException": true,
+        "cRuntimeValueExpression": "$value.runtimeValue().release()",
+        "cRuntimeValueOwnership": "owned",
+        "cRuntimeValueValidExpression": "MongoClient::isMongoClient(inox::Value($value))"
+      },
+      {
+        "libraryId": "mongodb",
+        "typeId": "mongodb#Db",
+        "declarationNames": [
+          "Db"
+        ],
+        "valueType": "object",
+        "cppType": "MongoDatabase",
+        "baseTypeIds": [],
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "cValueAdapter": "MongoDatabase(inox::Value($value))",
+        "cValueAdapterFailureMode": "thrown",
+        "cValueAdapterPreservesPendingException": true,
+        "cRuntimeValueExpression": "$value.runtimeValue().release()",
+        "cRuntimeValueOwnership": "owned",
+        "cRuntimeValueValidExpression": "MongoDatabase::isMongoDatabase(inox::Value($value))"
+      },
+      {
+        "libraryId": "mongodb",
+        "typeId": "mongodb#Collection",
+        "declarationNames": [
+          "Collection"
+        ],
+        "valueType": "object",
+        "cppType": "MongoCollection",
+        "baseTypeIds": [],
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "cValueAdapter": "MongoCollection(inox::Value($value))",
+        "cValueAdapterFailureMode": "thrown",
+        "cValueAdapterPreservesPendingException": true,
+        "cRuntimeValueExpression": "$value.runtimeValue().release()",
+        "cRuntimeValueOwnership": "owned",
+        "cRuntimeValueValidExpression": "MongoCollection::isMongoCollection(inox::Value($value))",
+        "typeParameters": [
+          "TSchema"
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "typeId": "mongodb#Cursor",
+        "declarationNames": [
+          "FindCursor",
+          "AggregationCursor"
+        ],
+        "valueType": "object",
+        "cppType": "MongoCursor",
+        "baseTypeIds": [],
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "cValueAdapter": "MongoCursor(inox::Value($value))",
+        "cValueAdapterFailureMode": "thrown",
+        "cValueAdapterPreservesPendingException": true,
+        "cRuntimeValueExpression": "$value.runtimeValue().release()",
+        "cRuntimeValueOwnership": "owned",
+        "cRuntimeValueValidExpression": "MongoCursor::isMongoCursor(inox::Value($value))",
+        "typeParameters": [
+          "TSchema"
+        ]
+      }
+    ],
+    "operations": [
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#module:mongodb:ObjectId",
+        "bindingAliases": [
+          "mongodb#module:mongodb:default.ObjectId"
+        ],
+        "operationId": "mongodb#ObjectId#construct",
+        "kind": "construct",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "variants": [
+          {
+            "minArgs": 0,
+            "maxArgs": 0,
+            "argumentChecks": [],
+            "cExpression": "MongoObjectId",
+            "cArgumentKinds": [],
+            "cResultMode": "value"
+          },
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "string"
+                ]
+              }
+            ],
+            "cExpression": "MongoObjectId",
+            "cArgumentKinds": [
+              "string-view"
+            ],
+            "cResultMode": "value"
+          }
+        ],
+        "minArgs": 0,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "string"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "mongodb#ObjectId",
+          "args": [],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "cFailureMode": "thrown"
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#module:mongodb:ObjectId.createFromTime",
+        "bindingAliases": [
+          "mongodb#module:mongodb:default.ObjectId.createFromTime"
+        ],
+        "operationId": "mongodb#ObjectId#createFromTime",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "cExpression": "MongoObjectId::createFromTime",
+        "cArgumentKinds": [
+          "number"
+        ],
+        "cCallStyle": "function",
+        "cFailureMode": "thrown",
+        "cPreservesPendingException": false,
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "number"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "mongodb#ObjectId",
+          "args": [],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        }
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#module:mongodb:ObjectId.isValid",
+        "bindingAliases": [
+          "mongodb#module:mongodb:default.ObjectId.isValid"
+        ],
+        "operationId": "mongodb#ObjectId#isValid",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "cExpression": "MongoObjectId::isValid",
+        "cArgumentKinds": [
+          "string-view-or-value"
+        ],
+        "cCallStyle": "function",
+        "cFailureMode": null,
+        "cPreservesPendingException": true,
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "string",
+              "object"
+            ],
+            "objectTypeIds": [
+              "mongodb#ObjectId"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "primitive",
+          "name": "boolean",
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        }
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#ObjectId.equals",
+        "operationId": "mongodb#ObjectId#equals",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#ObjectId",
+        "cExpression": "equals",
+        "cArgumentKinds": [
+          "receiver",
+          "string-view-or-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": null,
+        "cPreservesPendingException": true,
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "string",
+              "object"
+            ],
+            "objectTypeIds": [
+              "mongodb#ObjectId"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "primitive",
+          "name": "boolean",
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        }
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#ObjectId.toString",
+        "operationId": "mongodb#ObjectId#toString",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#ObjectId",
+        "cExpression": "toString",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "cPreservesPendingException": false,
+        "minArgs": 0,
+        "maxArgs": 0,
+        "argumentChecks": [],
+        "resultTypeRef": {
+          "kind": "primitive",
+          "name": "string",
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "cResultMapping": {
+          "cppType": "inox::String",
+          "fields": []
+        }
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#ObjectId.toJSON",
+        "operationId": "mongodb#ObjectId#toJSON",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#ObjectId",
+        "cExpression": "toJSON",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "cPreservesPendingException": false,
+        "minArgs": 0,
+        "maxArgs": 0,
+        "argumentChecks": [],
+        "resultTypeRef": {
+          "kind": "primitive",
+          "name": "string",
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "cResultMapping": {
+          "cppType": "inox::String",
+          "fields": []
+        }
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#module:mongodb:BSON.serialize",
+        "bindingAliases": [
+          "mongodb#module:mongodb:default.BSON.serialize"
+        ],
+        "operationId": "mongodb#BSON.serialize",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "cExpression": "MongoBson::serialize",
+        "cArgumentKinds": [
+          "runtime-value"
+        ],
+        "cCallStyle": "function",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:binary#Uint8Array",
+          "args": [],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        }
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#module:mongodb:BSON.deserialize",
+        "bindingAliases": [
+          "mongodb#module:mongodb:default.BSON.deserialize"
+        ],
+        "operationId": "mongodb#BSON.deserialize",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "cExpression": "MongoBson::deserialize",
+        "cArgumentKinds": [
+          "value"
+        ],
+        "cCallStyle": "function",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "bytes"
+            ],
+            "objectTypeIds": [
+              "global:binary#Uint8Array"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "object",
+          "fields": [],
+          "dynamic": true,
+          "dynamicField": {
+            "kind": "unknown",
+            "nullable": true,
+            "ownership": "value",
+            "traits": []
+          },
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "cResultMapping": {
+          "cppType": "inox::Value",
+          "fields": []
+        }
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#module:mongodb:MongoClient",
+        "bindingAliases": [
+          "mongodb#module:mongodb:default.MongoClient"
+        ],
+        "operationId": "mongodb#MongoClient#construct",
+        "kind": "construct",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "minArgs": 1,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "string"
+            ]
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "cFailureMode": "thrown",
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "mongodb#MongoClient",
+          "args": [],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "variants": [
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "MongoClient",
+            "cArgumentKinds": [
+              "string-view"
+            ],
+            "cResultMode": "value",
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "string"
+                ]
+              }
+            ]
+          },
+          {
+            "minArgs": 2,
+            "maxArgs": 2,
+            "cExpression": "MongoClient",
+            "cArgumentKinds": [
+              "string-view",
+              "runtime-value"
+            ],
+            "cResultMode": "value",
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "string"
+                ]
+              },
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#module:mongodb:MongoClient.connect",
+        "bindingAliases": [
+          "mongodb#module:mongodb:default.MongoClient.connect"
+        ],
+        "operationId": "mongodb#MongoClient#static-connect",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "minArgs": 1,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "string"
+            ]
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "cFailureMode": "thrown",
+        "cCallStyle": "function",
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "nominal",
+              "typeId": "mongodb#MongoClient",
+              "args": [],
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "nominal",
+                  "typeId": "mongodb#MongoClient",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "variants": [
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "MongoClient::connect",
+            "cArgumentKinds": [
+              "string-view"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "string"
+                ]
+              }
+            ]
+          },
+          {
+            "minArgs": 2,
+            "maxArgs": 2,
+            "cExpression": "MongoClient::connect",
+            "cArgumentKinds": [
+              "string-view",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "string"
+                ]
+              },
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#MongoClient.connect",
+        "operationId": "mongodb#MongoClient#connect",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#MongoClient",
+        "cExpression": "connect",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 0,
+        "argumentChecks": [],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "nominal",
+              "typeId": "mongodb#MongoClient",
+              "args": [],
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "nominal",
+                  "typeId": "mongodb#MongoClient",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#MongoClient.db",
+        "operationId": "mongodb#MongoClient#db",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#MongoClient",
+        "cExpression": "db",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "string"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "mongodb#Db",
+          "args": [],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "variants": [
+          {
+            "minArgs": 0,
+            "maxArgs": 0,
+            "cExpression": "db",
+            "cArgumentKinds": [
+              "receiver"
+            ],
+            "argumentChecks": []
+          },
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "db",
+            "cArgumentKinds": [
+              "receiver",
+              "string-view"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "string"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#MongoClient.bulkWrite",
+        "operationId": "mongodb#MongoClient#bulkWrite",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#MongoClient",
+        "cExpression": "bulkWrite",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ],
+            "objectTypeIds": [
+              "global:collections#Array"
+            ],
+            "typeRef": {
+              "kind": "nominal",
+              "typeId": "global:collections#Array",
+              "args": [
+                {
+                  "kind": "object",
+                  "fields": [],
+                  "dynamic": true,
+                  "dynamicField": {
+                    "kind": "unknown",
+                    "nullable": true,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ],
+              "nullable": false,
+              "ownership": "value",
+              "traits": [
+                {
+                  "traitId": "iterable",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "object",
+              "declaredName": "BulkWriteResult",
+              "fields": [
+                {
+                  "name": "acknowledged",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "boolean",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "insertedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "matchedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "modifiedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "deletedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "upsertedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                }
+              ],
+              "dynamic": false,
+              "dynamicField": null,
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "object",
+                  "declaredName": "BulkWriteResult",
+                  "fields": [
+                    {
+                      "name": "acknowledged",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "boolean",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "insertedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "matchedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "modifiedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "deletedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "upsertedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    }
+                  ],
+                  "dynamic": false,
+                  "dynamicField": null,
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "variants": [
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "bulkWrite",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ],
+                "objectTypeIds": [
+                  "global:collections#Array"
+                ],
+                "typeRef": {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "object",
+                          "fields": [],
+                          "dynamic": true,
+                          "dynamicField": {
+                            "kind": "unknown",
+                            "nullable": true,
+                            "ownership": "value",
+                            "traits": []
+                          },
+                          "nullable": false,
+                          "ownership": "value",
+                          "traits": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "minArgs": 2,
+            "maxArgs": 2,
+            "cExpression": "bulkWrite",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ],
+                "objectTypeIds": [
+                  "global:collections#Array"
+                ],
+                "typeRef": {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "object",
+                          "fields": [],
+                          "dynamic": true,
+                          "dynamicField": {
+                            "kind": "unknown",
+                            "nullable": true,
+                            "ownership": "value",
+                            "traits": []
+                          },
+                          "nullable": false,
+                          "ownership": "value",
+                          "traits": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#MongoClient.close",
+        "operationId": "mongodb#MongoClient#close",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#MongoClient",
+        "cExpression": "close",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 0,
+        "argumentChecks": [],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "primitive",
+              "name": "void",
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "primitive",
+                  "name": "void",
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Db.collection",
+        "operationId": "mongodb#Db#collection",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Db",
+        "cExpression": "collection",
+        "cArgumentKinds": [
+          "receiver",
+          "string-view"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "string"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "mongodb#Collection",
+          "args": [
+            {
+              "kind": "parameter",
+              "name": "TSchema"
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "explicit-type-argument",
+                "argumentIndex": 0
+              },
+              {
+                "source": "contextual-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.find",
+        "operationId": "mongodb#Collection#find",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "find",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "mongodb#Cursor",
+          "args": [
+            {
+              "kind": "parameter",
+              "name": "TSchema"
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "minArgs": 0,
+            "maxArgs": 0,
+            "cExpression": "find",
+            "cArgumentKinds": [
+              "receiver"
+            ],
+            "argumentChecks": []
+          },
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "find",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.findOne",
+        "operationId": "mongodb#Collection#findOne",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "findOne",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "parameter",
+              "name": "TSchema",
+              "nullable": true
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "parameter",
+                  "name": "TSchema",
+                  "nullable": true
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "minArgs": 0,
+            "maxArgs": 0,
+            "cExpression": "findOne",
+            "cArgumentKinds": [
+              "receiver"
+            ],
+            "argumentChecks": []
+          },
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "findOne",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.findOneAndUpdate",
+        "operationId": "mongodb#Collection#findOneAndUpdate",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "findOneAndUpdate",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 2,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "parameter",
+              "name": "TSchema",
+              "nullable": true
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "parameter",
+                  "name": "TSchema",
+                  "nullable": true
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.aggregate",
+        "operationId": "mongodb#Collection#aggregate",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "aggregate",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ],
+            "objectTypeIds": [
+              "global:collections#Array"
+            ],
+            "typeRef": {
+              "kind": "nominal",
+              "typeId": "global:collections#Array",
+              "args": [
+                {
+                  "kind": "object",
+                  "fields": [],
+                  "dynamic": true,
+                  "dynamicField": {
+                    "kind": "unknown",
+                    "nullable": true,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ],
+              "nullable": false,
+              "ownership": "value",
+              "traits": [
+                {
+                  "traitId": "iterable",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "mongodb#Cursor",
+          "args": [
+            {
+              "kind": "parameter",
+              "name": "TResult"
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "typeParameters": [
+          {
+            "name": "TResult",
+            "sources": [
+              {
+                "source": "explicit-type-argument",
+                "argumentIndex": 0
+              },
+              {
+                "source": "contextual-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "minArgs": 0,
+            "maxArgs": 0,
+            "cExpression": "aggregate",
+            "cArgumentKinds": [
+              "receiver"
+            ],
+            "argumentChecks": []
+          },
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "aggregate",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ],
+                "objectTypeIds": [
+                  "global:collections#Array"
+                ],
+                "typeRef": {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "object",
+                          "fields": [],
+                          "dynamic": true,
+                          "dynamicField": {
+                            "kind": "unknown",
+                            "nullable": true,
+                            "ownership": "value",
+                            "traits": []
+                          },
+                          "nullable": false,
+                          "ownership": "value",
+                          "traits": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.distinct",
+        "operationId": "mongodb#Collection#distinct",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "distinct",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "string"
+            ]
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "nominal",
+              "typeId": "global:collections#Array",
+              "args": [
+                {
+                  "kind": "unknown",
+                  "nullable": true,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ],
+              "nullable": false,
+              "ownership": "value",
+              "traits": [
+                {
+                  "traitId": "iterable",
+                  "args": [
+                    {
+                      "kind": "unknown",
+                      "nullable": true,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "unknown",
+                      "nullable": true,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "unknown",
+                          "nullable": true,
+                          "ownership": "value",
+                          "traits": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "distinct",
+            "cArgumentKinds": [
+              "receiver",
+              "string-view"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "string"
+                ]
+              }
+            ]
+          },
+          {
+            "minArgs": 2,
+            "maxArgs": 2,
+            "cExpression": "distinct",
+            "cArgumentKinds": [
+              "receiver",
+              "string-view",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "string"
+                ]
+              },
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.countDocuments",
+        "operationId": "mongodb#Collection#countDocuments",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "countDocuments",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "primitive",
+              "name": "number",
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "primitive",
+                  "name": "number",
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "minArgs": 0,
+            "maxArgs": 0,
+            "cExpression": "countDocuments",
+            "cArgumentKinds": [
+              "receiver"
+            ],
+            "argumentChecks": []
+          },
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "countDocuments",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.estimatedDocumentCount",
+        "operationId": "mongodb#Collection#estimatedDocumentCount",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "estimatedDocumentCount",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 0,
+        "argumentChecks": [],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "primitive",
+              "name": "number",
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "primitive",
+                  "name": "number",
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.createIndex",
+        "operationId": "mongodb#Collection#createIndex",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "createIndex",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "primitive",
+              "name": "string",
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "primitive",
+                  "name": "string",
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "createIndex",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          },
+          {
+            "minArgs": 2,
+            "maxArgs": 2,
+            "cExpression": "createIndex",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              },
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.createIndexes",
+        "operationId": "mongodb#Collection#createIndexes",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "createIndexes",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ],
+            "objectTypeIds": [
+              "global:collections#Array"
+            ],
+            "typeRef": {
+              "kind": "nominal",
+              "typeId": "global:collections#Array",
+              "args": [
+                {
+                  "kind": "object",
+                  "fields": [],
+                  "dynamic": true,
+                  "dynamicField": {
+                    "kind": "unknown",
+                    "nullable": true,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ],
+              "nullable": false,
+              "ownership": "value",
+              "traits": [
+                {
+                  "traitId": "iterable",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "nominal",
+              "typeId": "global:collections#Array",
+              "args": [
+                {
+                  "kind": "primitive",
+                  "name": "string",
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ],
+              "nullable": false,
+              "ownership": "value",
+              "traits": [
+                {
+                  "traitId": "iterable",
+                  "args": [
+                    {
+                      "kind": "primitive",
+                      "name": "string",
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "primitive",
+                      "name": "string",
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "primitive",
+                          "name": "string",
+                          "nullable": false,
+                          "ownership": "value",
+                          "traits": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "createIndexes",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ],
+                "objectTypeIds": [
+                  "global:collections#Array"
+                ],
+                "typeRef": {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "object",
+                          "fields": [],
+                          "dynamic": true,
+                          "dynamicField": {
+                            "kind": "unknown",
+                            "nullable": true,
+                            "ownership": "value",
+                            "traits": []
+                          },
+                          "nullable": false,
+                          "ownership": "value",
+                          "traits": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "minArgs": 2,
+            "maxArgs": 2,
+            "cExpression": "createIndexes",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ],
+                "objectTypeIds": [
+                  "global:collections#Array"
+                ],
+                "typeRef": {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "object",
+                          "fields": [],
+                          "dynamic": true,
+                          "dynamicField": {
+                            "kind": "unknown",
+                            "nullable": true,
+                            "ownership": "value",
+                            "traits": []
+                          },
+                          "nullable": false,
+                          "ownership": "value",
+                          "traits": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.bulkWrite",
+        "operationId": "mongodb#Collection#bulkWrite",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "bulkWrite",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ],
+            "objectTypeIds": [
+              "global:collections#Array"
+            ],
+            "typeRef": {
+              "kind": "nominal",
+              "typeId": "global:collections#Array",
+              "args": [
+                {
+                  "kind": "object",
+                  "fields": [],
+                  "dynamic": true,
+                  "dynamicField": {
+                    "kind": "unknown",
+                    "nullable": true,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ],
+              "nullable": false,
+              "ownership": "value",
+              "traits": [
+                {
+                  "traitId": "iterable",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "object",
+              "declaredName": "BulkWriteResult",
+              "fields": [
+                {
+                  "name": "acknowledged",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "boolean",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "insertedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "matchedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "modifiedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "deletedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "upsertedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                }
+              ],
+              "dynamic": false,
+              "dynamicField": null,
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "object",
+                  "declaredName": "BulkWriteResult",
+                  "fields": [
+                    {
+                      "name": "acknowledged",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "boolean",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "insertedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "matchedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "modifiedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "deletedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "upsertedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    }
+                  ],
+                  "dynamic": false,
+                  "dynamicField": null,
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "minArgs": 1,
+            "maxArgs": 1,
+            "cExpression": "bulkWrite",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ],
+                "objectTypeIds": [
+                  "global:collections#Array"
+                ],
+                "typeRef": {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "object",
+                          "fields": [],
+                          "dynamic": true,
+                          "dynamicField": {
+                            "kind": "unknown",
+                            "nullable": true,
+                            "ownership": "value",
+                            "traits": []
+                          },
+                          "nullable": false,
+                          "ownership": "value",
+                          "traits": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "minArgs": 2,
+            "maxArgs": 2,
+            "cExpression": "bulkWrite",
+            "cArgumentKinds": [
+              "receiver",
+              "runtime-value",
+              "runtime-value"
+            ],
+            "argumentChecks": [
+              {
+                "valueTypes": [
+                  "object"
+                ],
+                "objectTypeIds": [
+                  "global:collections#Array"
+                ],
+                "typeRef": {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "object",
+                      "fields": [],
+                      "dynamic": true,
+                      "dynamicField": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "nullable": false,
+                      "ownership": "value",
+                      "traits": []
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "object",
+                          "fields": [],
+                          "dynamic": true,
+                          "dynamicField": {
+                            "kind": "unknown",
+                            "nullable": true,
+                            "ownership": "value",
+                            "traits": []
+                          },
+                          "nullable": false,
+                          "ownership": "value",
+                          "traits": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "valueTypes": [
+                  "object"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.insertOne",
+        "operationId": "mongodb#Collection#insertOne",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "insertOne",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ],
+            "typeRef": {
+              "kind": "parameter",
+              "name": "TSchema"
+            }
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "object",
+              "declaredName": "InsertOneResult",
+              "fields": [
+                {
+                  "name": "acknowledged",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "boolean",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "insertedId",
+                  "typeRef": {
+                    "kind": "unknown",
+                    "nullable": true,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                }
+              ],
+              "dynamic": false,
+              "dynamicField": null,
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "object",
+                  "declaredName": "InsertOneResult",
+                  "fields": [
+                    {
+                      "name": "acknowledged",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "boolean",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "insertedId",
+                      "typeRef": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    }
+                  ],
+                  "dynamic": false,
+                  "dynamicField": null,
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.insertMany",
+        "operationId": "mongodb#Collection#insertMany",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "insertMany",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ],
+            "objectTypeIds": [
+              "global:collections#Array"
+            ],
+            "typeRef": {
+              "kind": "nominal",
+              "typeId": "global:collections#Array",
+              "args": [
+                {
+                  "kind": "parameter",
+                  "name": "TSchema"
+                }
+              ],
+              "nullable": false,
+              "ownership": "value",
+              "traits": [
+                {
+                  "traitId": "iterable",
+                  "args": [
+                    {
+                      "kind": "parameter",
+                      "name": "TSchema"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "object",
+              "declaredName": "InsertManyResult",
+              "fields": [
+                {
+                  "name": "acknowledged",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "boolean",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "insertedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "insertedIds",
+                  "typeRef": {
+                    "kind": "object",
+                    "fields": [],
+                    "dynamic": true,
+                    "dynamicField": {
+                      "kind": "unknown",
+                      "nullable": true,
+                      "ownership": "value",
+                      "traits": []
+                    },
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                }
+              ],
+              "dynamic": false,
+              "dynamicField": null,
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "object",
+                  "declaredName": "InsertManyResult",
+                  "fields": [
+                    {
+                      "name": "acknowledged",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "boolean",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "insertedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "insertedIds",
+                      "typeRef": {
+                        "kind": "object",
+                        "fields": [],
+                        "dynamic": true,
+                        "dynamicField": {
+                          "kind": "unknown",
+                          "nullable": true,
+                          "ownership": "value",
+                          "traits": []
+                        },
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    }
+                  ],
+                  "dynamic": false,
+                  "dynamicField": null,
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.updateOne",
+        "operationId": "mongodb#Collection#updateOne",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "updateOne",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 2,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "object",
+              "declaredName": "UpdateResult",
+              "fields": [
+                {
+                  "name": "acknowledged",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "boolean",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "matchedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "modifiedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "upsertedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "upsertedId",
+                  "typeRef": {
+                    "kind": "unknown",
+                    "nullable": true,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                }
+              ],
+              "dynamic": false,
+              "dynamicField": null,
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "object",
+                  "declaredName": "UpdateResult",
+                  "fields": [
+                    {
+                      "name": "acknowledged",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "boolean",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "matchedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "modifiedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "upsertedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "upsertedId",
+                      "typeRef": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    }
+                  ],
+                  "dynamic": false,
+                  "dynamicField": null,
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.updateMany",
+        "operationId": "mongodb#Collection#updateMany",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "updateMany",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 2,
+        "maxArgs": 2,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          },
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "object",
+              "declaredName": "UpdateResult",
+              "fields": [
+                {
+                  "name": "acknowledged",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "boolean",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "matchedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "modifiedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "upsertedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "upsertedId",
+                  "typeRef": {
+                    "kind": "unknown",
+                    "nullable": true,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                }
+              ],
+              "dynamic": false,
+              "dynamicField": null,
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "object",
+                  "declaredName": "UpdateResult",
+                  "fields": [
+                    {
+                      "name": "acknowledged",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "boolean",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "matchedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "modifiedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "upsertedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "upsertedId",
+                      "typeRef": {
+                        "kind": "unknown",
+                        "nullable": true,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    }
+                  ],
+                  "dynamic": false,
+                  "dynamicField": null,
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.deleteOne",
+        "operationId": "mongodb#Collection#deleteOne",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "deleteOne",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "object",
+              "declaredName": "DeleteResult",
+              "fields": [
+                {
+                  "name": "acknowledged",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "boolean",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "deletedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                }
+              ],
+              "dynamic": false,
+              "dynamicField": null,
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "object",
+                  "declaredName": "DeleteResult",
+                  "fields": [
+                    {
+                      "name": "acknowledged",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "boolean",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "deletedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    }
+                  ],
+                  "dynamic": false,
+                  "dynamicField": null,
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Collection.deleteMany",
+        "operationId": "mongodb#Collection#deleteMany",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Collection",
+        "cExpression": "deleteMany",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "object",
+              "declaredName": "DeleteResult",
+              "fields": [
+                {
+                  "name": "acknowledged",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "boolean",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                },
+                {
+                  "name": "deletedCount",
+                  "typeRef": {
+                    "kind": "primitive",
+                    "name": "number",
+                    "nullable": false,
+                    "ownership": "value",
+                    "traits": []
+                  },
+                  "readonly": true
+                }
+              ],
+              "dynamic": false,
+              "dynamicField": null,
+              "nullable": false,
+              "ownership": "value",
+              "traits": []
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "object",
+                  "declaredName": "DeleteResult",
+                  "fields": [
+                    {
+                      "name": "acknowledged",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "boolean",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    },
+                    {
+                      "name": "deletedCount",
+                      "typeRef": {
+                        "kind": "primitive",
+                        "name": "number",
+                        "nullable": false,
+                        "ownership": "value",
+                        "traits": []
+                      },
+                      "readonly": true
+                    }
+                  ],
+                  "dynamic": false,
+                  "dynamicField": null,
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Cursor.sort",
+        "operationId": "mongodb#Cursor#sort",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Cursor",
+        "cExpression": "sort",
+        "cArgumentKinds": [
+          "receiver",
+          "runtime-value"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "object"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "mongodb#Cursor",
+          "args": [
+            {
+              "kind": "parameter",
+              "name": "TSchema"
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Cursor.limit",
+        "operationId": "mongodb#Cursor#limit",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Cursor",
+        "cExpression": "limit",
+        "cArgumentKinds": [
+          "receiver",
+          "number"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 1,
+        "maxArgs": 1,
+        "argumentChecks": [
+          {
+            "valueTypes": [
+              "number"
+            ]
+          }
+        ],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "mongodb#Cursor",
+          "args": [
+            {
+              "kind": "parameter",
+              "name": "TSchema"
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": []
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Cursor.next",
+        "operationId": "mongodb#Cursor#next",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Cursor",
+        "cExpression": "next",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 0,
+        "argumentChecks": [],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "parameter",
+              "name": "TSchema",
+              "nullable": true
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "parameter",
+                  "name": "TSchema",
+                  "nullable": true
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "libraryId": "mongodb",
+        "bindingId": "mongodb#Cursor.toArray",
+        "operationId": "mongodb#Cursor#toArray",
+        "kind": "call",
+        "runtimeRequirements": [
+          "mongodb"
+        ],
+        "receiverTypeId": "mongodb#Cursor",
+        "cExpression": "toArray",
+        "cArgumentKinds": [
+          "receiver"
+        ],
+        "cCallStyle": "member",
+        "cFailureMode": "thrown",
+        "minArgs": 0,
+        "maxArgs": 0,
+        "argumentChecks": [],
+        "resultTypeRef": {
+          "kind": "nominal",
+          "typeId": "global:promise#Promise",
+          "args": [
+            {
+              "kind": "nominal",
+              "typeId": "global:collections#Array",
+              "args": [
+                {
+                  "kind": "parameter",
+                  "name": "TSchema"
+                }
+              ],
+              "nullable": false,
+              "ownership": "value",
+              "traits": [
+                {
+                  "traitId": "iterable",
+                  "args": [
+                    {
+                      "kind": "parameter",
+                      "name": "TSchema"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "nullable": false,
+          "ownership": "value",
+          "traits": [
+            {
+              "traitId": "awaitable",
+              "args": [
+                {
+                  "kind": "nominal",
+                  "typeId": "global:collections#Array",
+                  "args": [
+                    {
+                      "kind": "parameter",
+                      "name": "TSchema"
+                    }
+                  ],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": [
+                    {
+                      "traitId": "iterable",
+                      "args": [
+                        {
+                          "kind": "parameter",
+                          "name": "TSchema"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "nominal",
+                  "typeId": "global:error#Error",
+                  "args": [],
+                  "nullable": false,
+                  "ownership": "value",
+                  "traits": []
+                }
+              ]
+            }
+          ]
+        },
+        "typeParameters": [
+          {
+            "name": "TSchema",
+            "sources": [
+              {
+                "source": "receiver-type-argument",
+                "argumentIndex": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "intrinsicBindings": [],
+    "runtimeRequirements": [
+      {
+        "id": "mongodb",
+        "dependencies": [
+          "global:binary",
+          "global:collections#array",
+          "global:error",
+          "global:promise#promise",
+          "global:time",
+          "managed-values",
+          "objects",
+          "string-bytes"
+        ],
+        "cPreludeIncludes": [
+          "inox/mongodb.h"
+        ],
+        "capabilities": [
+          "tcp"
+        ],
+        "optionConstraints": [
+          {
+            "optionId": "target:runtime#loop-backend",
+            "allowedValues": [
+              "libuv"
+            ],
+            "diagnosticCode": "INOX_MONGODB_LOOP_BACKEND",
+            "diagnosticMessage": "mongodb is not implemented without libuv; select --loop-backend libuv"
+          }
+        ]
+      }
+    ]
+  },
+  "nativeBuild": {
+    "cmakePackages": [],
+    "cmakeLinkLibraries": [
+      "mongoc::static"
+    ],
+    "linkerArguments": [],
+    "cmakeProjects": [
+      {
+        "sourceDir": "third_party/mongo-c-driver",
+        "options": [
+          {
+            "name": "ENABLE_MONGOC",
+            "value": "ON"
+          },
+          {
+            "name": "ENABLE_STATIC",
+            "value": "ON"
+          },
+          {
+            "name": "ENABLE_SHARED",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_TESTS",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_EXAMPLES",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_MAN_PAGES",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_HTML_DOCS",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_UNINSTALL",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_SNAPPY",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_ZSTD",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_ZLIB",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_SASL",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_SHM_COUNTERS",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_CLIENT_SIDE_ENCRYPTION",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_MONGODB_AWS_AUTH",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_SRV",
+            "value": "ON"
+          },
+          {
+            "name": "ENABLE_SSL",
+            "value": "AUTO"
+          },
+          {
+            "name": "USE_BUNDLED_UTF8PROC",
+            "value": "ON"
+          }
+        ]
+      }
+    ]
+  }
+}

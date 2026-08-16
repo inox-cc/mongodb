@@ -1,4 +1,5 @@
 third_party/**
+compiler/library.json
 node_modules/**
 coverage/**
 dist/**
